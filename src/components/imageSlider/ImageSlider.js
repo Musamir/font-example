@@ -11,40 +11,28 @@ import "./style.css"
 
 function ImageSlides() {
     return (
-        <Carousel className="slider">
-            <Carousel.Item fluid>
+        <Carousel style={{ height: '500px' }} >
+            <Carousel.Item className='slider-item-wrapper'>
 
-                <Image className="slider" src={mosque1} rounded />
+                <Image src={mosque1} rounded className='slider-item' />
 
                 <Carousel.Caption>
                     <h5>First slide label</h5>
                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
             </Carousel.Item >
-            <Carousel.Item fluid>
+            <Carousel.Item className='slider-item-wrapper'>
 
-                <Image src={mosque2} rounded />
+                <Image src={mosque2} rounded className='slider-item' />
 
                 <Carousel.Caption>
                     <h5>Second slide label</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item fluid>
+            <Carousel.Item className='slider-item-wrapper'>
 
-                <Image src={mosque3} rounded />
-
-                <Carousel.Caption>
-                    <h5>Third slide label</h5>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
-                </Carousel.Caption>
-            </Carousel.Item>
-
-            <Carousel.Item fluid>
-
-                <Image src={mosque4} rounded />
+                <Image src={mosque3} rounded className='slider-item' />
 
                 <Carousel.Caption>
                     <h5>Third slide label</h5>
@@ -53,10 +41,20 @@ function ImageSlides() {
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
+            <Carousel.Item className='slider-item-wrapper'>
 
-            <Carousel.Item fluid>
+                <Image src={mosque4} rounded className='slider-item' />
 
-                <Image src={mosque_inside} rounded/>
+                <Carousel.Caption>
+                    <h5>Third slide label</h5>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item className='slider-item-wrapper'>
+
+                <Image src={mosque_inside} rounded className='slider-item' />
 
                 <Carousel.Caption>
                     <h5>Third slide label</h5>
