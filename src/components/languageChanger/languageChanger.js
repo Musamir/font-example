@@ -12,13 +12,26 @@ const LanguageChangerBlock = ({lan}) => {
     const dispatch = useDispatch()
 
     return (
-        <ButtonGroup>
-            <DropdownButton as={ButtonGroup} title={lan} id="bg-nested-dropdown" variant="outline-dark">
-                <Dropdown.Item className="dropdown-item-short" eventKey="1" onClick={() => dispatch(changeLanguage('tj'))}>tj</Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-short" eventKey="2" onClick={() => dispatch(changeLanguage('en'))}>en</Dropdown.Item>
-                <Dropdown.Item className="dropdown-item-short" eventKey="2" onClick={() => dispatch(changeLanguage('ru'))}>ru</Dropdown.Item>
-            </DropdownButton>
-        </ButtonGroup>
+        <div>
+            <ButtonGroup>
+                <DropdownButton as={ButtonGroup} title={lan} id="bg-nested-dropdown" variant="outline-dark">
+                    <Dropdown.Item
+                        className="dropdown-item-short" eventKey="1" onClick={() => dispatch(changeLanguage('tj'))}>
+                        tj
+                    </Dropdown.Item>
+
+                    <Dropdown.Item
+                        className="dropdown-item-short" eventKey="2" onClick={() => dispatch(changeLanguage('en'))}>
+                        en
+                    </Dropdown.Item>
+
+                    <Dropdown.Item
+                        className="dropdown-item-short" eventKey="2" onClick={() => dispatch(changeLanguage('ru'))}>
+                        ru
+                    </Dropdown.Item>
+                </DropdownButton>
+            </ButtonGroup>
+        </div>
     )
 }
 

@@ -12,6 +12,8 @@ import { IoInvertMode } from 'react-icons/fa';
 import { IconContext } from "react-icons";
 import LanguageChangerBlock from '../languageChanger/languageChanger';
 
+import navbar from '../../assets/text/navbar';
+
 function NavScrollExample({ lan }) {
     return (
         <div className='container'>
@@ -33,8 +35,8 @@ function NavScrollExample({ lan }) {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1">Вақтҳои Намоз</Nav.Link>
-                            <Nav.Link href="#action2">Хабархо</Nav.Link>
+                            <Nav.Link href="#action1">{navbar.get(lan).PrayTime}</Nav.Link>
+                            <Nav.Link href="#action2">{navbar.get(lan).News}</Nav.Link>
                         </Nav>
 
                         <Navbar.Collapse className="justify-content-end">
@@ -42,14 +44,14 @@ function NavScrollExample({ lan }) {
                             <Nav.Link href="https://www.facebook.com/takvim.tj" className="me-2">
                                 <IconContext.Provider value={{ color: "blue", className: "global-class-name", size: 30 }}>
                                     <div>
-                                        <FaFacebookSquare className='me-2' />
+                                        <FaFacebookSquare />
                                     </div>
                                 </IconContext.Provider>
                             </Nav.Link>
 
-                            <LanguageChangerBlock className='me-2' lan={lan} />
+                            <LanguageChangerBlock className="me-2" lan={lan} />
 
-                            <ThemeMenu className='me-2' />
+                            <ThemeMenu className="me-lg-2"/>
 
                         </Navbar.Collapse>
 

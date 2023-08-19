@@ -3,6 +3,12 @@
     width: 100%;
 }
 
+.slider-item-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .slider-item {
     height: 500px;
     width: 100%;

@@ -2,11 +2,11 @@ import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
 
 import Image from 'react-bootstrap/Image';
-import mosque1 from '../../assets/img/mosque/mosque.jpg';
-import mosque2 from '../../assets/img/mosque/mosque2.jpg';
-import mosque3 from '../../assets/img/mosque/mosque3.jpg';
-import mosque4 from '../../assets/img/mosque/mosque4.jpg';
-import mosque_inside from '../../assets/img/mosque/mosque-inside.jpg';
+import mosque11 from '../../assets/img/mosque/mosque11.jpg';
+import mosque22 from '../../assets/img/mosque/mosque22.jpeg';
+import mosque33 from '../../assets/img/mosque/mosque33.jpg';
+import mosque44 from '../../assets/img/mosque/mosque44.jpg';
+
 import "./style.css"
 
 function ImageSlides() {
@@ -14,54 +14,23 @@ function ImageSlides() {
         <Carousel style={{ height: '500px' }} >
             <Carousel.Item className='slider-item-wrapper'>
 
-                <Image src={mosque1} rounded className='slider-item' />
-
-                <Carousel.Caption>
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
+                <div className='slider-item-image-wrapper'>
+                    <Image src={mosque11} rounded className='slider-item' />
+                </div>
             </Carousel.Item >
+
             <Carousel.Item className='slider-item-wrapper'>
 
-                <Image src={mosque2} rounded className='slider-item' />
-
-                <Carousel.Caption>
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
+                <div className='slider-item-image-wrapper'>
+                    <Image src={mosque33} rounded className='slider-item' />
+                </div>
             </Carousel.Item>
+
             <Carousel.Item className='slider-item-wrapper'>
 
-                <Image src={mosque3} rounded className='slider-item' />
-
-                <Carousel.Caption>
-                    <h5>Third slide label</h5>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item className='slider-item-wrapper'>
-
-                <Image src={mosque4} rounded className='slider-item' />
-
-                <Carousel.Caption>
-                    <h5>Third slide label</h5>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item className='slider-item-wrapper'>
-
-                <Image src={mosque_inside} rounded className='slider-item' />
-
-                <Carousel.Caption>
-                    <h5>Third slide label</h5>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
-                </Carousel.Caption>
+                <div className='slider-item-image-wrapper'>
+                    <Image src={mosque44} rounded className='slider-item' />
+                </div>
             </Carousel.Item>
         </Carousel>
     );
