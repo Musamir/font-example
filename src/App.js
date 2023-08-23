@@ -1,34 +1,47 @@
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavScrollExample from './components/navbar/Navibar';
+import Header from './components/Header/Header';
 import {useSelector} from 'react-redux'
 import TextBlock from './components/textBlock/TextBlock';
 import MainTextBlock from './components/mainTextBlock/MainTextBlock';
-import ImageSlides from './components/imageSlider/ImageSlider';
+import ImageSlides from './components/Mainimage';
+import {Outlet, Route, Routes} from 'react-router-dom';
+import IndexPage from './components/IndexPage/indexPage';
+import AboutPage from './components/AboutPage/AboutPage';
+import NewsPage from './components/NewsPage/News';
+import Ramadan from './assets/text/ramadan';
+import RamadanPage from './components/RamadanPage/RamadanPage';
+import Container from 'react-bootstrap/Container';
+import {within} from '@testing-library/react';
 
 function App() {
-
-   const theme = useSelector((state) => state.themeStore.value);
-
-   const lan = useSelector((state) => state.languageStore.value)
-
-   console.log('theme', theme)
-   console.log('lan', lan)
+    const theme = useSelector((state) => state.themeStore.value);
+    const lan = useSelector((state) => state.languageStore.value)
 
   return (
-      <div data-bs-theme={theme}>
-          <NavScrollExample lan={lan}/>
-          <ImageSlides/>
-          <div className="container mainFlexText">
-              <div className="row">
-                  <TextBlock lan={lan}/>
-                  <MainTextBlock lan={lan}/>
-                  <div className="col-3"></div>
-              </div>
-          </div>
-      </div>
+
+      <Routes>
+          <Route path={'/'} element={<Layout theme={theme} lan={lan}/>}>
+              <Route index element={<IndexPage theme={theme} lan={lan}/>}/>
+              <Route path={'about'} element={ <AboutPage theme={theme} lan={lan}/>}/>
+              <Route path={'news'} element={ <NewsPage theme={theme} lan={lan}/>}/>
+              <Route path={'ramadan'} element={ <RamadanPage theme={theme} lan={lan}/>}/>
+          </Route>
+      </Routes>
   );
+}
+
+function Layout(props) {
+    return(
+        <div data-bs-theme={props.theme}>
+            <Header lan={props.lan}/>
+            <ImageSlides/>
+            <main className="container">
+                <Outlet/>
+            </main>
+        </div>
+    )
 }
 
 export default App;
