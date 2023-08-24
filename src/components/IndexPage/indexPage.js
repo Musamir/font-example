@@ -2,8 +2,18 @@ import namaz from '../../assets/text/namaz';
 import {Accordion, Alert, Table} from 'react-bootstrap';
 import './style.css';
 import Container from 'react-bootstrap/Container';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 function IndexPage(props) {
+
+
+    let themeColor = (props.theme === "dark"? "black": "white")
+    let themeOpositeColor = (props.theme === "dark"? "white": "black")
+
+    let themeColorVariant = "outline-" + props.theme
+    let themeOpositeColorVariant =  "outline-" + (props.theme === "dark"? "light": "dark")
+
+
     return (
         <div>
             <div className="container mainFlexText">
@@ -12,16 +22,48 @@ function IndexPage(props) {
                         textAlign: "center",
                         margin:"20px 0 20px 0",
                     }}>
+
+                        <Dropdown className="m-1">
+                            <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
+                                Душанбе
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item >Душанбе</Dropdown.Item>
+                                <Dropdown.Item >Айни</Dropdown.Item>
+                                <Dropdown.Item >Ашт</Dropdown.Item>
+                                <Dropdown.Item >Бӯстон</Dropdown.Item>
+                                <Dropdown.Item >Ваҳдат</Dropdown.Item>
+                                <Dropdown.Item >Истаравшан</Dropdown.Item>
+                                <Dropdown.Item >Исфара</Dropdown.Item>
+                                <Dropdown.Item >Конибодом</Dropdown.Item>
+                                <Dropdown.Item >Кӯлоб</Dropdown.Item>
+                                <Dropdown.Item >Қӯрғонтеппа</Dropdown.Item>
+                                <Dropdown.Item >Мурғоб</Dropdown.Item>
+                                <Dropdown.Item >Норак</Dropdown.Item>
+                                <Dropdown.Item >Панҷакент</Dropdown.Item>
+                                <Dropdown.Item >Рашт</Dropdown.Item>
+                                <Dropdown.Item >Турсунзода</Dropdown.Item>
+                                <Dropdown.Item >Ҳисор</Dropdown.Item>
+                                <Dropdown.Item >Хоруғ</Dropdown.Item>
+                                <Dropdown.Item >Хуҷанд</Dropdown.Item>
+                                <Dropdown.Item >Шаҳритус</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+
+
                         <Alert key={props.theme} variant={props.theme}>
                             {namaz.get(props.lan).AttentionText}
                         </Alert>
 
-                        <div className="container" style={{
+                        <Container style={{
                             textAlign: "center",
                             margin:"20px 0 20px 0",
+                            background: themeColor,
+                            color: themeOpositeColor
                         }}>
                             {namaz.get(props.lan).InfoText}
-                        </div>
+                        </Container>
 
                         <Table striped bordered>
                             <tbody>
@@ -49,7 +91,7 @@ function IndexPage(props) {
                         </Table>
 
                         <Container>
-                            <Accordion defaultActiveKey={['-1']}>
+                            <Accordion defaultActiveKey={['-1']} alwaysOpen>
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>{namaz.get(props.lan).Fajr.Name}</Accordion.Header>
                                     <Accordion.Body>

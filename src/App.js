@@ -9,6 +9,7 @@ import IndexPage from './components/IndexPage/indexPage';
 import AboutPage from './components/AboutPage/AboutPage';
 import NewsPage from './components/NewsPage/News';
 import RamadanPage from './components/RamadanPage/RamadanPage';
+import Container from 'react-bootstrap/Container';
 
 function App() {
     const theme = useSelector((state) => state.themeStore.value);
@@ -30,11 +31,11 @@ function App() {
 function Layout(props) {
     return(
         <div data-bs-theme={props.theme}>
-            <Header lan={props.lan}/>
-            <ImageSlides/>
-            <main className="container">
-                <Outlet/>
-            </main>
+                <Header lan={props.lan} theme={props.theme}/>
+                <ImageSlides/>
+                <main className="container">
+                    <Outlet/>
+                </main>
         </div>
     )
 }
